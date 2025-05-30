@@ -24,6 +24,9 @@ function BookCard({ book }) {
           {/* 내용이 너무 길면 잘라서 보여주거나, noWrap으로 한 줄만 표시 */}
           {book.content || '내용 없음'}
         </Typography>
+        <Typography variant="caption">
+          등록일: {new Date(book.createdAt).toLocaleDateString()}
+        </Typography>
       </CardContent>
       <CardActions>
         {/* to={`/books/${book.id}`} 는 나중에 상세 페이지 라우트를 만들 때 사용합니다. */}
