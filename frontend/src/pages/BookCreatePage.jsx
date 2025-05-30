@@ -95,16 +95,38 @@ function BookCreatePage() {
             </Alert>
           )}
 
-          <Box sx={{ mt: 2, textAlign: 'right' }}>
+        
+          <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
             <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              disabled={loading}
+              variant="outlined"
+              color="inherit"
+              onClick={() => navigate(-1)} // 또는 navigate('/books')
             >
-              {loading ? <CircularProgress size={24} /> : '저장'}
-            </Button>
-          </Box>
+          취소
+        </Button>
+        <Button
+          variant="outlined"
+          color="warning"
+          onClick={() =>
+            setFormData({
+              title: '',
+              author: '',
+              content: '',
+            })
+          }
+        >
+          삭제
+        </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          disabled={loading}
+        >
+          {loading ? <CircularProgress size={24} /> : '저장'}
+        </Button>
+      </Box>
+
         </form>
       </Box>
     </Container>
